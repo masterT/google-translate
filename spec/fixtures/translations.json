@@ -1,0 +1,16 @@
+{
+  "fr": {
+    "bonjour": {
+      "en": "hello",
+      "it": "buongiorno",
+      "es": "buenos dias"
+    }
+  },
+  "en": {
+    "hi": {
+      "fr": "salut",
+      "it": "ciao",
+      "es": "hola"
+    }
+  }
+}
