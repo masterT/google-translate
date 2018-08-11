@@ -3,4 +3,22 @@
 require 'google_translate'
 require 'slop'
 
-# Add code here!
+opts = Slop.parse do |o|
+  o.banner = "usage: google_translate [options] <text>"
+  o.string '-s', '--source', 'the source language', default: 'auto'
+  o.string '-t', '--target', 'the target language', required: true
+
+  o.on '-v', '--version' do
+    puts GoogleTranslate::VERSION
+    exit
+  end
+
+  o.on '-h', '--help' do
+    puts o
+    exit
+  end
+end
+
+options = opts.to_hash.select { |key| [:source, :target].include?(key) }
+text = opts.arguments.join(' ')
+puts GoogleTranslate.translate(text, options)
