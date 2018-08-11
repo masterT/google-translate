@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'google_translate'
+require 'slop'
+
+# Add code here!
